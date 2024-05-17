@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: exchange-rate
+    name: e-commerce-api
     runtime: node
     buildCommand: npm install --production
     startCommand: node index.js
