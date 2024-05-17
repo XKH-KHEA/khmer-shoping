@@ -1,0 +1,91 @@
+/* Reset default styles */
+body,
+h1,
+nav {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  text-align: left;
+  padding: 20px;
+}
+
+h1 {
+  color: #333;
+}
+
+nav {
+  margin-bottom: 20px;
+}
+
+nav a button {
+  padding: 10px 20px;
+  background: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+nav a button:hover {
+  background: #0056b3;
+}
+
+/* Header styles */
+header {
+  background-color: #f8f9fa;
+  padding: 10px 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #f8f9fa;
+  padding: 10px 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  font-size: 8px;
+}
+
+/* Main content styles */
+.content {
+  display: flex;
+  flex-wrap: wrap; /* Wrap elements if they exceed container width */
+  gap: 20px; /* Add gap between elements */
+}
+
+/* Product card styles */
+.product-card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: calc(50% - 20px); /* Adjust width to fit within the container with gap */
+  max-width: 300px;
+}
+
+.product-card img {
+  max-width: 100%;
+  border-radius: 5px;
+}
+
+.product-details {
+  margin-top: 10px;
+}
+
+.product-details h2 {
+  margin: 0;
+  font-size: 1.5em;
+  color: #333;
+}
+
+.product-details p {
+  margin: 5px 0;
+  color: #666;
+}
+
+.product-details p strong {
+  color: #333;
+}
