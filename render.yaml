@@ -1,0 +1,6 @@
+services:
+  - type: web
+    name: e-commerce-api
+    runtime: node
+    buildCommand: npm install --production
+    startCommand: node index.js
