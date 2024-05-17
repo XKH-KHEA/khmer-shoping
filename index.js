@@ -1,39 +1,28 @@
 
 const express = require('express');
 const mongoose = require('mongoose');
-const path = require('path');
-const cors = require('cors'); // Importing CORS
-const app = express();
-const PORT = process.env.PORT || 3000;
+const cors = require('cors');
+require('dotenv').config();
 
-// Connect to MongoDB
-mongoose
-  .connect(
-    "mongodb+srv://onkhea168:Ok391291@ecommerce.uw5lmsl.mongodb.net/?retryWrites=true&w=majority&appName=Ecommerce",
-    {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    }
-  )
-  .then(() => {
-    console.log("Connected to MongoDB");
-  })
-  .catch((err) => {
-    console.error("Failed to connect to MongoDB", err);
-  });
+const app = express();
+const port = process.env.PORT || 8080;
 
 // Middleware
+app.use(cors());
 app.use(express.json());
-app.use(cors()); // Enabling CORS
 
-// Serve static files
-app.use(express.static(path.join(__dirname, 'public')));
+// MongoDB connection
+mongoose.connect(process.env.MONGODB_URI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+}).then(() => console.log('MongoDB connected'))
+  .catch(err => console.log(err));
 
 // Routes
-const productRoutes = require('./routes/productRoutes');
-app.use('/api/products', productRoutes);
+const productRoutes = require("./routes/productRoutes");
+app.use("/api/products", productRoutes);
 
 // Start Server
-app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
+app.listen(port, () => {
+  console.log(`Server is running on port ${port}`);
 });
