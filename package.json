@@ -10,12 +10,19 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "@google-cloud/local-auth": "^2.1.0",
     "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
+    "fs": "^0.0.1-security",
+    "googleapis": "^105.0.0",
     "jsonwebtoken": "^9.0.2",
-    "mongoose": "^8.4.0"
+    "mongoose": "^8.4.0",
+    "passport": "^0.7.0",
+    "passport-google-oauth20": "^2.0.0",
+    "path": "^0.12.7",
+    "ytdl-core": "^4.11.5"
   },
   "engines": {
     "node": "20.x"
