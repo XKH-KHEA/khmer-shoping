@@ -23,8 +23,10 @@ const cartRoutes = require("./routes/carts");
 const paymentRoutes = require("./routes/payments");
 const reviewRoutes = require("./routes/reviews");
 const shippingRoutes = require("./routes/shipping");
+const videoRoutes = require("./routes/videoRoutes");
 
-
+// Routes
+app.use("/videos", videoRoutes);
 app.use("/auth", authRoutes);
 app.use("/users", userRoutes);
 app.use("/products", productRoutes);
